@@ -1,51 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proffessions</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body >
-    
-    <div align="center" class="container mt-4"><div class="Title"><h2 class="fw-bold text-nowrap bg-body-secondary border " style="width: 18rem;">Proffessions List</h2></div>
-    <table class="table table-bordered border-dark table-striped table-hover shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-    <thead class="table-dark">
-        <tr>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div align="center" class="container mt-4">
+      <div class="Title">
+        <h2
+          class="fw-bold text-nowrap bg-body-secondary border"
+          style="width: 18rem"
+        >
+          Proffessions List
+        </h2>
+      </div>
+      <table
+        class="table table-bordered border-dark table-striped table-hover shadow-lg p-3 mb-5 bg-body-tertiary rounded"
+      >
+        <thead class="table-dark">
+          <tr>
             <th>Profession Number</th>
             <th>Profession Type</th>
             <th>Proffession name</th>
             <th>Salary per month</th>
             <th>Requirements</th>
-        </tr>
-    </thead>
-    <tbody id="table-body" class="table-group-divider table-light"></tbody>
-    <script>
-            const xmlhttp = new XMLHttpRequest();  
-            xmlhttp.open("GET", "http://php-json-proffessions.test/index.php")
-            xmlhttp.send();
-            xmlhttp.onload = function(){
-                const Proffessions = JSON.parse(this.responseText).Proffessions;
-                        for(var i in Proffessions){
-                            var row = `<tr>
+          </tr>
+        </thead>
+        <tbody id="table-body" class="table-group-divider table-light"></tbody>
+        <script>
+          const xmlhttp = new XMLHttpRequest();
+          xmlhttp.open("GET", "http://php-json-proffessions.test/index.php");
+          xmlhttp.send();
+          xmlhttp.onload = function () {
+            const Proffessions = JSON.parse(this.responseText).Proffessions;
+            for (var i in Proffessions) {
+              var row = `<tr>
                                             <td>${Proffessions[i].ProffessionNo}</td>
                                             <td>${Proffessions[i].ProffessionType}</td>
                                             <td>${Proffessions[i].ProffessionName}</td>
                                             <td>${Proffessions[i].SalaryMonth}</td>
                                             <td>${Proffessions[i].Requirements}</td>
-                                    </tr>`
-                            var table = document.getElementById('table-body');
-                            table.innerHTML += row;
-                        }
-                    }
-                     
-        
-    
-    </script>
-     </table>
+                                    </tr>`;
+              var table = document.getElementById("table-body");
+              table.innerHTML += row;
+            }
+          };
+        </script>
+      </table>
     </div>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
