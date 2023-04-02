@@ -1,0 +1,14 @@
+body{
+    margin: 0px;
+    padding: 0px;
+
+    background-image: url('/img/Bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+        
+}
+.Title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
