@@ -24,7 +24,7 @@
     <tbody id="table-body" class="table-group-divider table-light"></tbody>
     <script>
             const xmlhttp = new XMLHttpRequest();  
-            xmlhttp.open("GET", "http://json-activity.test/index.php")
+            xmlhttp.open("GET", "http://php-json-proffessions.test/index.php")
             xmlhttp.send();
             xmlhttp.onload = function(){
                 const Proffessions = JSON.parse(this.responseText).Proffessions;
